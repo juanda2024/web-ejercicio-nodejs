@@ -20,6 +20,8 @@ exports.procesarJSON = async function makeGetRequest(url_actual, tipo) {
 
             var nuevo_proveedor = new proveedor(id_proveedor, nombre_compania, nombre_contacto);
 
+
+
         }
     }
     else if (tipo == "cliente") {
