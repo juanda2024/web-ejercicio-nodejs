@@ -1,0 +1,27 @@
+{
+  "name": "ejercicio6",
+  "version": "1.0.0",
+  "description": "ejercicio 6 en node js para programación de tecnologías web",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanda2024/web-ejercicio-nodejs.git"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "David Monsalve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanda2024/web-ejercicio-nodejs/issues"
+  },
+  "homepage": "https://github.com/juanda2024/web-ejercicio-nodejs#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "eslint": "^7.8.1"
+  }
+}
