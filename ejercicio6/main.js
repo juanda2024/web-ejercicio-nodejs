@@ -1,5 +1,6 @@
 // Import de la clase principal.
 const principal = require("./principal.js");
+const servidor = require("./servidor.js");
 
 /**
  * URL del ejercicio para los proveedores
@@ -12,13 +13,19 @@ var url_clientes = "https://gist.githubusercontent.com/josejbocanegra/986182ce2d
 
 /**
  * Metodo main que ejecuta en general el funcionamiento del programa
- * @param {*} url_proveedores: url para procesar los proveedores 
- * @param {*} url_clientes: url para procesar los clientes 
  */
-function runApplication(url_proveedores, url_clientes) {
-    principal.procesarJSON(url_proveedores, "proveedor");
+function runApplication() {
+
+    servidor.runServer();
+
+    var url_solicitada = servidor.darUrl();
+    console.log(url_solicitada);
+    console.log("holi");
+
+    //principal.procesarJSON(url_proveedores, "proveedor");
+    //principal.procesarJSON(url_clientes, "clientes");
     //principal.procesarJSON(url_clientes, "cliente");
 }
 
 
-runApplication(url_proveedores, url_clientes);
+runApplication();
