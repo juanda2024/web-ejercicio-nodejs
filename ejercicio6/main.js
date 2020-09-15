@@ -1,4 +1,4 @@
-// Import de la clase principal.
+// Importaciones
 const principal = require("./principal.js");
 const servidor = require("./servidor.js");
 
@@ -12,20 +12,17 @@ var url_proveedores = "https://gist.githubusercontent.com/josejbocanegra/d3b26f9
 var url_clientes = "https://gist.githubusercontent.com/josejbocanegra/986182ce2dd3e6246adcf960f9cda061/raw/f013c156f37c34117c0d4ba9779b15d427fb8dcd/clientes.json";
 
 /**
- * Metodo main que ejecuta en general el funcionamiento del programa
+ * Metodo main que ejecuta en general el funcionamiento del programa.
+ * Primero crea el servidor en el puerto 8081
+ * Procede a leer los JSON propuestos y crear las tablas por fs
  */
 function runApplication() {
-
     servidor.runServer();
-
-    var url_solicitada = servidor.darUrl();
-    console.log(url_solicitada);
-    console.log("holi");
-
-    //principal.procesarJSON(url_proveedores, "proveedor");
-    //principal.procesarJSON(url_clientes, "clientes");
-    //principal.procesarJSON(url_clientes, "cliente");
+    principal.procesarJSON(url_proveedores, "proveedor");
+    principal.procesarJSON(url_clientes, "clientes");
 }
 
-
+/**
+ * Se ejecuta la aplicacion general
+ */
 runApplication();

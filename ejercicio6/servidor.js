@@ -4,24 +4,28 @@ var url = require('url');
 var fs = require('fs');
 
 /**
- * Variable que representa la url actual
+ * Metodo que crea el servidor y lee el path, cambiando activamente el html correspondiente.
  */
-var url_actual;
-
 exports.runServer = function run() {
-    http.createServer(function (request, response) {
-        response.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-
-        fs.readFile('index.html', function (err, content) {
-            response.write(content);
-            response.end();
-        });
+    http.createServer(function (req, res) {
+        // Muestra el index.html
+        if (req.url == '/index.html' || req.url == '/') {
+            fs.readFile('./index.html', function (err, data) {
+                res.end(data);
+            });
+        }
+        // Muestra el proveedores.html
+        else if (req.url == "/api/proveedores") {
+            fs.readFile('./proveedores.html', function (err, data) {
+                res.end(data);
+            });
+        }
+        // Muestra el clientes.html
+        else if (req.url == "/api/clientes") {
+            fs.readFile('./clientes.html', function (err, data) {
+                res.end(data);
+            });
+        }
     }).listen(8081);
-}
-
-exports.darUrl = function darUrl() {
-    return url_actual;
 }
 

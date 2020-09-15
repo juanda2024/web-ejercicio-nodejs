@@ -24,6 +24,7 @@
     "axios": "^0.20.0",
     "eslint": "^7.8.1",
     "fs": "0.0.1-security",
+    "node-html-parser": "^1.2.20",
     "url": "^0.11.0"
   }
 }
