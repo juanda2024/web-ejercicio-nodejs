@@ -38,7 +38,7 @@ exports.procesarJSON = async function makeGetRequest(url_actual, tipo) {
         });
     }
     // lee el html de clientes y escribe por fs los clientes encontrados en el JSON
-    else if (tipo == "cliente") {
+    else if (tipo == "clientes") {
         fs.readFile('clientes.html', 'utf8', (err, html) => {
             if (err) {
                 throw err;
@@ -47,9 +47,9 @@ exports.procesarJSON = async function makeGetRequest(url_actual, tipo) {
             const body = root.querySelector('#tabla_clientes');
             for (i in data) {
                 var cliente_actual = data[i];
-                var id_cliente = cliente_actual["idcliente"];
-                var nombre_compania = cliente_actual["nombrecompania"];
-                var nombre_contacto = cliente_actual["nombrecontacto"];
+                var id_cliente = cliente_actual["idCliente"];
+                var nombre_compania = cliente_actual["NombreCompania"];
+                var nombre_contacto = cliente_actual["NombreContacto"];
                 // NOTA: los espacios en el string del append están dados por la nueva indentacion del html
                 // se hace para que quede el codigo bien presentado.
                 body.appendChild('<tr> \n                <td>' + id_cliente + '</td>\n                <td>' + nombre_compania + '</td>\n                <td>' + nombre_contacto + '</td>\n             </tr>\n             ');
